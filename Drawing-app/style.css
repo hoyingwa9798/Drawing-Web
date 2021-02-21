@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background-image: url('background-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.narbar{
+    width: 100%;
+    min-height: 15vh;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.narbar h1{
+    color: #ffffff;
+    padding: 30px 30px;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    font-size: 2.7rem;
+    text-shadow: 0 0 10px #00b3ff,
+                 0 0 20px #00b3ff,
+                 0 0 40px #00b3ff,
+                 0 0 80px #00b3ff,
+                 0 0 1200px #00b3ff;
+}
+
+.nightbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 0 10px #00b3ff,
+                0 0 20px #00b3ff,
+                0 0 40px #00b3ff,
+                0 0 80px #00b3ff,
+                0 0 1200px #00b3ff;
+    animation: animatelightbar 5s linear infinite;
+}
+
+.layout{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    animation: animatelayout 10s linear infinite;
+}
+
+.draw-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+#main-area{
+    margin: 40px;
+    background-color: rgb(250, 234, 234); 
+    border:1px solid #000000;
+    box-shadow: 0 0 10px #ffee00,
+                0 0 20px #00ff22,
+                0 0 40px #00eeff,
+                0 0 80px #1900ff,
+                0 0 1200px #bb00ff;
+}
+
+.clear-button{
+    height: 60px;
+    width: 150px;
+    border: #000000;
+    border-radius: 30px;
+    background-color: #f500d46b;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+
+}
+
+.clear-button a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #f7f5f6;
+    border-top: 1px solid rgb(75, 69, 90);
+    border-bottom: 1px solid rgb(75, 69, 90);
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(15px);
+    z-index: 2;
+}
+
+.clear-button a::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left,  rgb(255, 255, 255,0.15),transparent);
+    transform: skew(45deg) translateX(0);
+    transition: 0.5s;
+}
+
+.clear-button:hover a::before{
+    transform: skew(45deg) translateX(200%);
+}
+
+.clear-button::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    transform: translateX(-50%);
+    background: red;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.clear-button::after{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    transform: translateX(-50%);
+    background: red;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.clear-button:hover::after{
+    top: 0;
+    height: 50%;
+    width: 70%;
+    border-radius: 30px;
+}
+
+.clear-button:hover::before{
+    bottom: 0;
+    height: 50%;
+    width: 70%;
+    border-radius: 30px;
+}
+
+.clear-button:hover a{
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #00b3ff,
+                 0 0 20px #00b3ff,
+                 0 0 40px #00b3ff,
+                 0 0 80px #00b3ff,
+                 0 0 1200px #00b3ff;
+}
+
+.tools-container{
+    height: 60px;
+    width: 150px;
+    color: white;
+    background: linear-gradient(#fc04a9, #ff020f);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.tools-container:hover{
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff7b00,
+                0 0 20px #ff7b00,
+                0 0 40px #ff7b00,
+                0 0 80px #ff7b00,
+                0 0 1200px #ff7b00;
+}
+.color-container{
+    margin: 25px;
+}
+
+.color-container i{
+    margin-right: 1rem;
+}
+
+
+@keyframes animatelightbar{
+    0%,5%
+    {
+        transform: scaleY(0) translateX(0);
+    }
+    10%
+    {
+        transform: scaleY(1) translateX(0);
+    }
+    90%
+    {
+        transform: scaleY(1) translateX(calc(600px - 10px));
+    }
+    95%,100%
+    {
+        transform: scaleY(0) translateX(calc(600px - 10px));
+    }
+}
+
+@keyframes animatelayout{
+    0%,2.5%
+    {
+        transform: translateX(0);
+    }
+    5%
+    {
+        transform: translateX(0);
+    }
+    45%
+    {
+        transform: translateX(100%);
+    }
+    47.5%,50%
+    {
+        transform: translateX(100%);
+    }
+
+    50.001%,52.5%
+    {
+        transform: translateX(-100%);
+    }
+    55%
+    {
+        transform: translateX(-100%);
+    }
+    95%
+    {
+        transform: translateX(0%);
+    }
+    97.5%,100%
+    {
+        transform: translateX(0%);
+    }
+
+}
+
